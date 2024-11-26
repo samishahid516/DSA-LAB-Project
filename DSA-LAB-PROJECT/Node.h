@@ -7,4 +7,9 @@ struct Node
 	int y;
 };
 
+class LinkedList
+{
+	Node* Head;
+};
+
 //Testing Github 
