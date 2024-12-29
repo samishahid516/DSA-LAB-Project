@@ -1,88 +1,58 @@
 #include "algorithms.h"
 
-void dfs_maze()
-{
-    // Font loading (you can do this once outside of the function if it's used multiple times)
-    static sf::Font font;
-    if (font.getInfo().family == "") // Check if font is already loaded
-    {
-        if (!font.loadFromFile("./fonts/arial.ttf"))
-        {
-            puts("ERROR: Font loading failed!");
-            return;
-        }
-    }
-
-    // Setup title
-    sf::Text title;
-    title.setCharacterSize(30);
-    title.setFont(font);
-    title.setString("DFS Maze");
-    title.setOrigin(title.getGlobalBounds().width / 2, title.getGlobalBounds().height / 2);
-    title.setPosition(WIDTH / 2, 50);
-
-    // Create grid and adjust it based on difficulty level
-    Grid grid;  // Creating Grid object
-
-    // Adjust grid properties (e.g., grid size) based on difficulty leve  // Assuming you have a method that adjusts the grid based on difficulty
-
-    grid.dfs_maze();  // Run the DFS algorithm to generate the maze
-
-    // Setup SFML window
-    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "DFS Maze");
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        // Draw the maze
-        grid.draw(window);
-
-        // Draw the title
-        window.draw(title);
-        window.display();
-        window.clear();
-    }
-}
-
-
-
-void dfs_maze_animation()
-{
-    system("cls");
-    // Initialize random number generator
-    std::random_device rd;
-    std::mt19937 g(rd());
-
-    // Load font
+void dfs_maze() {
     sf::Font font;
     if (!font.loadFromFile("./fonts/arial.ttf")) {
         puts("ERROR ! ");
         return;
     }
 
-    // Setup title text
+    sf::Text title;
+    title.setCharacterSize(30);
+    title.setFont(font);
+    title.setString("DFS Maze");
+    title.setOrigin(title.getGlobalBounds().width / 2, title.getGlobalBounds().height / 2);
+    title.setPosition(WIDTH / 2, 50);
+    Grid grid;
+    grid.dfs_maze();
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "DFS Maze");
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        grid.draw(window);
+        window.draw(title);
+        window.display();
+        window.clear();
+    }
+}
+void dfs_maze_animation() {
+    // Initialize random number generator 
+    std::random_device rd;
+    std::mt19937 g(rd());
+    sf::Font font;
+    if (!font.loadFromFile("./fonts/arial.ttf")) {
+        puts("ERROR ! ");
+        return;
+    }
+
     sf::Text title;
     title.setCharacterSize(30);
     title.setFont(font);
     title.setString("DFS Maze Animation");
     title.setOrigin(title.getGlobalBounds().width / 2, title.getGlobalBounds().height / 2);
     title.setPosition(WIDTH / 2, 50);
-
-    // Initialize grid and DFS stack
     Grid grid;
     std::stack<node> st;
     int cell_x = get_random_number(GRID_HEIGHT);
     int cell_y = get_random_number(GRID_WIDTH);
     grid.get_cell(cell_x, cell_y).set_visited();
-    std::vector<std::pair<int, int>> neighbors = grid.get_neighbors(cell_x, cell_y);
-
-    // Shuffle neighbors
-    std::shuffle(neighbors.begin(), neighbors.end(), g);
-    for (auto pos : neighbors) {
+    std::vector <std::pair<int, int>>  neigbors = grid.get_neighbors(cell_x, cell_y);
+    // Shuffle the vector 
+    std::shuffle(neigbors.begin(), neigbors.end(), g);
+    for (auto pos : neigbors) {
         if (!grid.get_cell(pos.first, pos.second).check_if_visited()) {
             grid.get_cell(pos.first, pos.second).set_visited();
             node nd;
@@ -93,37 +63,22 @@ void dfs_maze_animation()
             st.push(nd);
         }
     }
-
-    // Setup SFML window
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "DFS Maze Animation");
-
-    // Create a clock to manage the timing of each frame
-    sf::Clock clock;
-    float frameTime = 0.01f;  // 10 milliseconds per frame
-
-    // Animation loop
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+        grid.dfs_maze_animation(st);
+        grid.draw(window);
+        window.draw(title);
+        window.display();
+        window.clear();
+        sf::sleep(sf::milliseconds(10));
 
-        // Check if enough time has passed for the next frame update
-        if (clock.getElapsedTime().asSeconds() >= frameTime) {
-            grid.dfs_maze_animation(st);  // Update the maze animation
-            clock.restart();  // Restart the clock for the next frame
-
-            // Draw the updated grid and title
-            grid.draw(window);
-            window.draw(title);
-            window.display();
-            window.clear();
-        }
     }
 }
-
-
 void hunt_and_kill_maze() {
     sf::Font font;
     if (!font.loadFromFile("./fonts/arial.ttf")) {
@@ -154,9 +109,7 @@ void hunt_and_kill_maze() {
 }
 
 
-void hunt_and_kill_maze_animation() 
-{
-    system("cls");
+void hunt_and_kill_maze_animation() {
     sf::Font font;
     if (!font.loadFromFile("./fonts/arial.ttf")) {
         puts("ERROR ! ");
@@ -247,9 +200,7 @@ void prim_maze() {
     }
 }
 
-void prim_maze_animation() 
-{
-    system("cls");
+void prim_maze_animation() {
     sf::Font font;
     if (!font.loadFromFile("./fonts/arial.ttf")) {
         puts("ERROR ! ");
@@ -300,9 +251,7 @@ void prim_maze_animation()
 
 
 
-void origin_shift_animation() 
-{
-    system("cls");
+void origin_shift_animation() {
     sf::Font font;
     if (!font.loadFromFile("./fonts/arial.ttf")) {
         puts("ERROR ! ");
@@ -315,7 +264,6 @@ void origin_shift_animation()
     title.setOrigin(title.getGlobalBounds().width / 2, title.getGlobalBounds().height / 2);
     title.setPosition(WIDTH / 2, 50);
     Grid grid;
-
     grid.init_grid_shift();
     std::pair<int, int> shift_cell = std::make_pair(GRID_HEIGHT - 1, GRID_WIDTH - 1);
     sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Origin Shift Maze Animation");

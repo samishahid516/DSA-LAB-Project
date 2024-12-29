@@ -3,7 +3,6 @@
 #include "grid.h"
 #include "CONSTANTS.H"
 
-
 void dfs_maze();
 void dfs_maze_animation();
 void hunt_and_kill_maze();

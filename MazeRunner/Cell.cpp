@@ -1,4 +1,4 @@
-#include "Cell.h"
+#include "cell.h"
 
 
 Cell::Cell() : left(true), right(true), top(true), bottom(true), is_visited(false) {

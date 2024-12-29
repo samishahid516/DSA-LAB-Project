@@ -1,1 +1,200 @@
-﻿  MazeRunner.vcxproj -> C:\Users\riazm\source\repos\MazeRunner\x64\Debug\MazeRunner.exe
+﻿  Algorithms.cpp
+  Cell.cpp
+  Grid.cpp
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Grid.cpp(5,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Grid.cpp(162,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Grid.cpp(170,69): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Grid.cpp(222,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Grid.cpp(339,77): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Main.cpp
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,66): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(12,48): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,66): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(17,48): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,66): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(23,48): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,66): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:         ]
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:         and
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(29,48): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,56): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,56): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,56): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,56): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,37): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,37): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,37): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(78,37): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,51): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,51): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,51): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,51): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,51): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,35): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,35): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,35): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(81,35): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,53): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,53): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,53): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,53): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,53): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,37): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,37): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,37): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(84,37): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,64): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,64): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,64): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,64): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,64): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,37): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,37): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,37): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,37): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\player.h(87,37): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Timer.h(49,47): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(129,2): warning C4102: 'sound': unreferenced label
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,45): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,45): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,45): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,45): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,31): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,31): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,31): warning C4244:             T=unsigned int
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(397,31): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(398,34): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(400,35): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,43): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,43): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,43): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,43): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,40): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,40): warning C4244:         with
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,40): warning C4244:         [
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,40): warning C4244:             T=float
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\UserInterface.h(403,40): warning C4244:         ]
+  (compiling source file 'Main.cpp')
+  
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Main.cpp(35,23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\riazm\source\repos\DSA-LAB-Project\MazeRunner\Main.cpp(33,17): warning C4101: 'flag': unreferenced local variable
+  MazeGame.cpp
+  RandomAlgorithmSelector.cpp
+  Util.cpp
+  Generating Code...
+  MazeRunner.vcxproj -> C:\Users\riazm\Source\Repos\DSA-LAB-Project\x64\Debug\MazeRunner.exe

@@ -5,9 +5,10 @@
 std::function<void()> RandomAlgorithmSelector::getRandomAlgorithm()
 {
     // List of algorithms without difficulty parameters
-    std::vector<std::function<void()>> algorithms = {
-        []() { dfs_maze(); }, // Call dfs_maze without difficulty
-        []() { prim_maze(); }  // Call prim_maze without difficulty
+    std::vector<std::function<void()>> algorithms = 
+    {
+        []() { dfs_maze(); },
+        []() { prim_maze(); }
     };
 
     // Seed the random generator only once

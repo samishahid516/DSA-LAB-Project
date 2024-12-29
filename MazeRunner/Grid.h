@@ -1,18 +1,15 @@
-#ifndef Grid_H
-#define Grid_H
-
-
-
+#ifndef GRID_H
+#define GRID_H
 #include <stack>
 #include <random> 
 #include <algorithm>
-#include "CONSTANTS.h"
+#include "CONSTANTS.H"
 #include "cell.h"
 #include "util.h"
 
 
-class Grid 
-{
+
+class Grid {
 private:
     Cell cells[GRID_HEIGHT][GRID_WIDTH];
     std::pair<int, int> highlited_cell;
@@ -38,5 +35,6 @@ public:
 
 };
 
+#endif // !GRID_H
 
-#endif // !Grid_H
+

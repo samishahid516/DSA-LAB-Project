@@ -1,120 +1,26 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "User.h"
-#include "DatabaseConnection.h"
 #include "MazeGame.h"
 #include "Grid.h"
 #include "Algorithms.h"
+#include "Controller.h"
 
-void showMainMenu(User* user);
 void showAlgorithmsMenu();
 void showGenerationAlgorithms();
-//void showSolvingAlgorithms();
+void showSolvingAlgorithms();
 
-int main()
-{
-    DatabaseConnection db;
-    if (!db.connect())
-    {
-        std::cerr << "Failed to connect to the database. Exiting..." << std::endl;
-        return 1;
-    }
-
-    User* user = new User;
-    int choice;
-    bool isLoggedIn = false;
-
-    do
-    {
-        cout << "\n========= User Management =========\n";
-        cout << "1. Register\n";
-        cout << "2. Login\n";
-        cout << "3. Exit\n";
-        cout << "===================================\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-
-        switch (choice)
-        {
-        case 1:
-        {
-            system("cls");
-            string username, password;
-            cout << "\n--- Register ---\n";
-            cout << "Enter Username: ";
-            cin >> username;
-            cout << "Enter Password: ";
-            cin >> password;
-
-            user->setUsername(username);
-            user->setPassword(password);
-
-            if (user->registerUser(db))
-            {
-                cout << "User registered successfully!" << std::endl;
-            }
-            else
-            {
-                cout << "Registration failed. Username might already exist." << std::endl;
-            }
-            break;
-        }
-        case 2:
-        {
-           
-            system("cls"); 
-            string username, password;
-            cout << "\n--- Login ---\n";
-            cout << "Enter Username: ";
-            cin >> username;
-            cout << "Enter Password: ";
-            cin >> password;
-
-            user->setUsername(username);
-            user->setPassword(password);
-
-            if (user->loginUser(db))
-            {
-                cout << "Login successful!" << std::endl;
-                isLoggedIn = true;
-            }
-            else
-            {
-                cout << "Invalid username or password. Please try again." << std::endl;
-            }
-            break;
-        }
-        case 3:
-            cout << "Exiting program. Goodbye!" << std::endl;
-            delete user;
-            return 0;
-        default:
-            cout << "Invalid choice. Please try again." << std::endl;
-        }
-
-    } while (!isLoggedIn);
-
-    showMainMenu(user);
-
-    delete user;
-    return 0;
-}
-
-void showMainMenu(User* user)
+void showMainMenu()
 {
     int choice;
     do
     {
         system("cls");
 
+        
         cout << "\n========= Main Menu =========\n";
-        cout << "User: " << user->getUsername() << "\n";
-        cout << "User Score: " << user->getScore() << endl;
-        cout << "Accout Level: " << user->getAccountLevel() << endl;
         cout << "1. Play\n";
-        cout << "2. Time Attack\n";
-        cout << "3. Algorithms\n";
-        cout << "4. Exit\n";
+        cout << "2. Algorithms\n";
+        cout << "3. Exit\n";
         cout << "=============================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -123,126 +29,159 @@ void showMainMenu(User* user)
         {
         case 1:
         {
-            MazeGame game;
-            game.start(); // Start the game and generate the maze
+            // Call the game setup and start
+            int flag;
+            MenuReady();  // Initialize the game assets (menu textures, etc.)
+            srand(time(NULL));
+            myWindow.setFramerateLimit(10);
+
+            while (myWindow.isOpen())
+            {
+                while (myWindow.pollEvent(eve))
+                {
+                    if (eve.type == sf::Event::Closed)
+                    {
+                        myWindow.close();
+                    }
+                }
+                myWindow.clear();
+                startGame();  // Main game logic starts here
+                myWindow.display();
+            }
             break;
         }
         case 2:
-        {
-            cout << "Time Attack is under development!" << endl;
-            break;
-        }
-        case 3:
         {
             showAlgorithmsMenu();
             break;
         }
         case 4:
         {
-            cout << "Exiting program. Goodbye!" << std::endl;
+            std::cout << "Exiting program. Goodbye!" << std::endl;
             return;
         }
         default:
         {
-            cout << "Invalid choice. Please try again." << endl;
+            std::cout << "Invalid choice. Please try again." << std::endl;
         }
         }
     } while (choice != 4);
 }
 
-
-void showAlgorithmsMenu() 
+void showAlgorithmsMenu()
 {
     int choice;
-    do 
+    do
     {
         system("cls");
-        cout << "\n========= Algorithms Menu =========\n";
-        cout << "1. Maze Generation Algorithms\n";
-        cout << "2. Maze Solving Algorithms\n";
-        cout << "3. Back to Main Menu\n";
-        cout << "===================================\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
+        std::cout << "\n========= Algorithms Menu =========\n";
+        std::cout << "1. Maze Generation Algorithms\n";
+        std::cout << "2. Maze Solving Algorithms\n";
+        std::cout << "3. Back to Main Menu\n";
+        std::cout << "===================================\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
 
-        switch (choice) 
+        switch (choice)
         {
         case 1:
         {
-            showGenerationAlgorithms(); // Call Maze Generation menu
+            // Call Maze Generation menu
+            showGenerationAlgorithms();
             break;
         }
         case 2:
         {
-            //showSolvingAlgorithms(); // Placeholder for solving menu
-            //break;
+            // Call Maze Solving menu
+            showSolvingAlgorithms();
+            break;
         }
         case 3:
         {
-
-            cout << "Returning to Main Menu...\n";
+            std::cout << "Returning to Main Menu...\n";
             return;
         }
         default:
         {
-            cout << "Invalid choice. Please try again.\n";
+            std::cout << "Invalid choice. Please try again.\n";
         }
         }
     } while (choice != 3);
 }
 
-void showGenerationAlgorithms() 
+void showGenerationAlgorithms()
 {
     int choice;
-    do 
+    do
     {
         system("cls");
-        cout << "\n========= Maze Generation Algorithms =========\n";
-        cout << "1. DFS Maze Algorithm\n";
-        cout << "2. Hunt and Kill Algorithm\n";
-        cout << "3. Prim's Algorithm\n";
-        cout << "4. Origin Shift Algorithm" << endl;
-        cout << "4. Back to Algorithms Menu\n";
+        std::cout << "\n========= Maze Generation Algorithms =========\n";
+        std::cout << "1. DFS Maze Algorithm\n";
+        std::cout << "2. Hunt and Kill Algorithm\n";
+        std::cout << "3. Prim's Algorithm\n";
+        std::cout << "4. Origin Shift Algorithm\n";
+        std::cout << "5. Back to Algorithms Menu\n";
         std::cout << "==============================================\n";
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
-        switch (choice) 
+        switch (choice)
         {
         case 1:
-        {
-            cout << "Launching DFS Maze Algorithm...\n";
+            std::cout << "Launching DFS Maze Algorithm...\n";
             dfs_maze_animation();
             break;
-        }
         case 2:
-        {
-            cout << "Launching Hunt and Kill Maze Algorithm...\n";
+            std::cout << "Launching Hunt and Kill Maze Algorithm...\n";
             hunt_and_kill_maze_animation();
             break;
-        }
         case 3:
-        {
-            cout << "Launching Prim's Maze Algorithm...\n";
+            std::cout << "Launching Prim's Maze Algorithm...\n";
             prim_maze_animation();
             break;
-        }
         case 4:
-        {
-            cout << "Launching Origin Shift Algorithm...\n";
+            std::cout << "Launching Origin Shift Algorithm...\n";
             origin_shift_animation();
             break;
-        }
         case 5:
-        {
-            cout << "Returning to Algorithms Menu...\n";
+            std::cout << "Returning to Algorithms Menu...\n";
             return;
-        }
         default:
-        {
-            cout << "Invalid choice. Please try again.\n";
-        }
+            std::cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 5);
 }
 
+void showSolvingAlgorithms()
+{
+    int choice;
+    std::cout << "Select solving algorithm: \n";
+    std::cout << "1. Dijkstra's Algorithm\n";
+    std::cout << "2. Wall Following Algorithm\n";
+    std::cout << "3. DFS Algorithm\n";
+    std::cout << "Enter choice: ";
+    std::cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+        // Implement Dijkstra's algorithm solving animation
+        break;
+    case 2:
+        // Implement Wall Following algorithm solving animation
+        break;
+    case 3:
+        // Implement DFS algorithm solving animation
+        break;
+    default:
+        std::cout << "Invalid choice. Using DFS as default.\n";
+        // Implement DFS algorithm solving animation
+        break;
+    }
+}
+
+int main()
+{
+    showMainMenu();
+    return 0;
+}
