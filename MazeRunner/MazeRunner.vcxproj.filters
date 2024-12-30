@@ -30,12 +30,6 @@
     <ClCompile Include="Util.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="RandomAlgorithmSelector.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MazeGame.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithms.h">
@@ -51,12 +45,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomAlgorithmSelector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeGame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Controller.h">

@@ -62,7 +62,8 @@ void initialize()
 	CellStack.push(make_pair(CurrentCell.x, CurrentCell.y));
 
 }
-void GenerateMaze() {
+void GenerateMaze()
+{
 	initialize();
 	while (1)
 	{

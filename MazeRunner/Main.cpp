@@ -1,13 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "MazeGame.h"
 #include "Grid.h"
 #include "Algorithms.h"
 #include "Controller.h"
 
-void showAlgorithmsMenu();
 void showGenerationAlgorithms();
-void showSolvingAlgorithms();
 
 void showMainMenu()
 {
@@ -52,7 +49,7 @@ void showMainMenu()
         }
         case 2:
         {
-            showAlgorithmsMenu();
+            showGenerationAlgorithms();
             break;
         }
         case 4:
@@ -66,47 +63,6 @@ void showMainMenu()
         }
         }
     } while (choice != 4);
-}
-
-void showAlgorithmsMenu()
-{
-    int choice;
-    do
-    {
-        system("cls");
-        std::cout << "\n========= Algorithms Menu =========\n";
-        std::cout << "1. Maze Generation Algorithms\n";
-        std::cout << "2. Maze Solving Algorithms\n";
-        std::cout << "3. Back to Main Menu\n";
-        std::cout << "===================================\n";
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
-
-        switch (choice)
-        {
-        case 1:
-        {
-            // Call Maze Generation menu
-            showGenerationAlgorithms();
-            break;
-        }
-        case 2:
-        {
-            // Call Maze Solving menu
-            showSolvingAlgorithms();
-            break;
-        }
-        case 3:
-        {
-            std::cout << "Returning to Main Menu...\n";
-            return;
-        }
-        default:
-        {
-            std::cout << "Invalid choice. Please try again.\n";
-        }
-        }
-    } while (choice != 3);
 }
 
 void showGenerationAlgorithms()
@@ -150,34 +106,6 @@ void showGenerationAlgorithms()
             std::cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 5);
-}
-
-void showSolvingAlgorithms()
-{
-    int choice;
-    std::cout << "Select solving algorithm: \n";
-    std::cout << "1. Dijkstra's Algorithm\n";
-    std::cout << "2. Wall Following Algorithm\n";
-    std::cout << "3. DFS Algorithm\n";
-    std::cout << "Enter choice: ";
-    std::cin >> choice;
-
-    switch (choice)
-    {
-    case 1:
-        // Implement Dijkstra's algorithm solving animation
-        break;
-    case 2:
-        // Implement Wall Following algorithm solving animation
-        break;
-    case 3:
-        // Implement DFS algorithm solving animation
-        break;
-    default:
-        std::cout << "Invalid choice. Using DFS as default.\n";
-        // Implement DFS algorithm solving animation
-        break;
-    }
 }
 
 int main()

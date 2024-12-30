@@ -1,4 +1,6 @@
 #include "algorithms.h"
+#include<iostream>
+#include <iomanip>
 
 void dfs_maze() {
     sf::Font font;

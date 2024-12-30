@@ -1,7 +1,13 @@
-#ifndef ALGORITHMS_H
+﻿#ifndef ALGORITHMS_H
 #define ALGORITHMS_H
 #include "grid.h"
 #include "CONSTANTS.H"
+#include <iostream>
+#include <vector>
+#include <stack>
+#include <queue>
+#include <map>
+using namespace std;
 
 void dfs_maze();
 void dfs_maze_animation();

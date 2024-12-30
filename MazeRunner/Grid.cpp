@@ -58,52 +58,52 @@ void Grid::set_wall(int x1, int y1, int x2, int y2) {
     }
 }
 
-void Grid::dfs_maze() {
-    // Initialize random number generator 
+void Grid::dfs_maze()
+{
     std::random_device rd;
     std::mt19937 g(rd());
 
-
+    // Step 1: Start from a random cell and mark it as visited
     std::stack<node> st;
     int cell_x = get_random_number(GRID_HEIGHT);
     int cell_y = get_random_number(GRID_WIDTH);
     cells[cell_x][cell_y].set_visited();
-    std::vector <std::pair<int, int>>  neigbors = get_neighbors(cell_x, cell_y);
-    // Shuffle the vector 
+
+    // Step 2: Get and shuffle neighbors of the starting cell
+    std::vector <std::pair<int, int>> neigbors = get_neighbors(cell_x, cell_y);
     std::shuffle(neigbors.begin(), neigbors.end(), g);
+
+    // Step 3: Add unvisited neighbors to the stack
     for (auto pos : neigbors) {
         if (!cells[pos.first][pos.second].check_if_visited()) {
             cells[pos.first][pos.second].set_visited();
-            node nd;
-            nd.current_x = pos.first;
-            nd.current_y = pos.second;
-            nd.prev_x = cell_x;
-            nd.prev_y = cell_y;
+            node nd = { pos.first, pos.second, cell_x, cell_y };
             st.push(nd);
         }
     }
 
+    // Step 4: Continue processing the stack until it's empty
     while (!st.empty()) {
         node current_node = st.top(); st.pop();
+
+        // Step 5: Remove the wall between the current and previous cell
         remove_wall(current_node.current_x, current_node.current_y, current_node.prev_x, current_node.prev_y);
-        std::vector <std::pair<int, int>>  neigbors = get_neighbors(current_node.current_x, current_node.current_y);
-        // Shuffle the vector 
+
+        // Step 6: Get and shuffle neighbors of the current cell
+        std::vector <std::pair<int, int>> neigbors = get_neighbors(current_node.current_x, current_node.current_y);
         std::shuffle(neigbors.begin(), neigbors.end(), g);
+
+        // Step 7: Add unvisited neighbors to the stack
         for (auto pos : neigbors) {
             if (!cells[pos.first][pos.second].check_if_visited()) {
                 cells[pos.first][pos.second].set_visited();
-                node nd;
-                nd.current_x = pos.first;
-                nd.current_y = pos.second;
-                nd.prev_x = current_node.current_x;
-                nd.prev_y = current_node.current_y;
+                node nd = { pos.first, pos.second, current_node.current_x, current_node.current_y };
                 st.push(nd);
             }
         }
     }
-
-
 }
+
 
 void Grid::dfs_maze_animation(std::stack<node>& st) {
     if (st.empty()) return;
@@ -151,34 +151,46 @@ std::pair<int, int> Grid::hunt() const {
     return std::make_pair(-1, -1);
 }
 
-void Grid::hunt_and_kill_maze() {
-    bool hunted = true;
-    bool dead_end = false;
+void Grid::hunt_and_kill_maze()
+{
+    bool hunted = true;    // Flag to indicate if hunting is still ongoing
+    bool dead_end = false; // Flag to indicate if the current cell is a dead-end
     int cell_x = get_random_number(GRID_HEIGHT);
     int cell_y = get_random_number(GRID_WIDTH);
     std::pair<int, int> current_cell = std::make_pair(cell_x, cell_y);
+
+    // Step 1: Start with a random cell and mark it as visited
     cells[cell_x][cell_y].set_visited();
-    std::vector <std::pair<int, int>>  neigbors = get_neighbors(cell_x, cell_y);
+    std::vector <std::pair<int, int>> neigbors = get_neighbors(cell_x, cell_y);
     std::pair<int, int> next_cell = neigbors[get_random_number(neigbors.size())];
+
+    // Step 2: Loop until hunting is complete
     while (hunted) {
+        // Step 3: Explore the maze from the current cell until a dead-end is found
         while (!dead_end) {
-            std::vector <std::pair<int, int>>  neigbors = get_neighbors(next_cell.first, next_cell.second);
+            std::vector <std::pair<int, int>> neigbors = get_neighbors(next_cell.first, next_cell.second);
             cells[next_cell.first][next_cell.second].set_visited();
             remove_wall(next_cell.first, next_cell.second, current_cell.first, current_cell.second);
             current_cell = next_cell;
+
+            // Step 4: Move to a random neighbor or mark as dead-end if no neighbors exist
             if (neigbors.size() != 0)
                 next_cell = neigbors[get_random_number(neigbors.size())];
-
             else
-                dead_end = true;
+                dead_end = true; // Mark dead-end if no neighbors are left
         }
+
+        // Step 5: Hunt for the next unvisited cell
         next_cell = hunt();
-        if (next_cell.first == -1 and next_cell.second == -1) {
+
+        // Step 6: If no unvisited cell is found, stop hunting
+        if (next_cell.first == -1 && next_cell.second == -1) {
             hunted = false;
             break;
         }
-        dead_end = false;
 
+        // Step 7: Reset for the next hunt
+        dead_end = false;
     }
 }
 
@@ -216,7 +228,8 @@ std::vector<std::pair<int, int>> Grid::get_neighbors(int x, int y, bool  visited
 }
 
 
-std::pair<int, int> Grid::hunt_and_kill_maze_animation(std::pair<int, int> current_cell) {
+std::pair<int, int> Grid::hunt_and_kill_maze_animation(std::pair<int, int> current_cell) 
+{
     std::vector <std::pair<int, int>>  neigbors = get_neighbors(current_cell.first, current_cell.second);
     if (neigbors.size() == 0) return std::make_pair(-1, -1);
     std::pair<int, int> next_cell = neigbors[get_random_number(neigbors.size())];
@@ -334,15 +347,33 @@ void Grid::init_grid_shift() {
     }
 }
 
-std::pair<int, int> Grid::origin_shift(std::pair<int, int> origin) {
+std::pair<int, int> Grid::origin_shift(std::pair<int, int> origin)
+{
+    // Step 1: Get the neighbors of the current origin cell
     std::vector <std::pair<int, int>> neigbors = get_neighbors(origin.first, origin.second, true);
+
+    // Step 2: Randomly select the next cell from the neighbors
     std::pair<int, int> next_cell = neigbors[get_random_number(neigbors.size())];
+
+    // Step 3: Highlight the selected next cell
     set_highlited_cell(next_cell.first, next_cell.second);
-    if (cells[next_cell.first][next_cell.second].get_direction().first != -1 and cells[next_cell.first][next_cell.second].get_direction().second != -1) {
-        set_wall(next_cell.first, next_cell.second, cells[next_cell.first][next_cell.second].get_direction().first, cells[next_cell.first][next_cell.second].get_direction().second);
-        cells[next_cell.first][next_cell.second].set_direction(-1, -1);
+
+    // Step 4: If the next cell already has a direction set (i.e., it has been visited previously), remove the wall
+    if (cells[next_cell.first][next_cell.second].get_direction().first != -1 &&
+        cells[next_cell.first][next_cell.second].get_direction().second != -1)
+    {
+        set_wall(next_cell.first, next_cell.second,
+            cells[next_cell.first][next_cell.second].get_direction().first,
+            cells[next_cell.first][next_cell.second].get_direction().second);
+        cells[next_cell.first][next_cell.second].set_direction(-1, -1); // Reset direction
     }
+
+    // Step 5: Set the direction of the origin cell to the next cell
     cells[origin.first][origin.second].set_direction(next_cell.first, next_cell.second);
+
+    // Step 6: Remove the wall between the origin cell and the next cell to create a path
     remove_wall(origin.first, origin.second, next_cell.first, next_cell.second);
+
+    // Step 7: Return the next cell
     return next_cell;
 }

@@ -9,7 +9,8 @@ FILE* Myfile;
 FILE* about;
 char ab[1000];
 
-void file_io(int score, string name) {
+void file_io(int score, string name) 
+{
     // Declare a pointer to the file
     errno_t err;
 
