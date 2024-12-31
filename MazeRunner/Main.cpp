@@ -26,9 +26,8 @@ void showMainMenu()
         {
         case 1:
         {
-            // Call the game setup and start
             int flag;
-            MenuReady();  // Initialize the game assets (menu textures, etc.)
+            MenuReady();
             srand(time(NULL));
             myWindow.setFramerateLimit(10);
 
@@ -42,7 +41,7 @@ void showMainMenu()
                     }
                 }
                 myWindow.clear();
-                startGame();  // Main game logic starts here
+                startGame(); 
                 myWindow.display();
             }
             break;
@@ -52,14 +51,14 @@ void showMainMenu()
             showGenerationAlgorithms();
             break;
         }
-        case 4:
+        case 3:
         {
-            std::cout << "Exiting program. Goodbye!" << std::endl;
+            cout << "Exiting program. Goodbye!" << endl;
             return;
         }
         default:
         {
-            std::cout << "Invalid choice. Please try again." << std::endl;
+            cout << "Invalid choice. Please try again." << endl;
         }
         }
     } while (choice != 4);
@@ -71,39 +70,39 @@ void showGenerationAlgorithms()
     do
     {
         system("cls");
-        std::cout << "\n========= Maze Generation Algorithms =========\n";
-        std::cout << "1. DFS Maze Algorithm\n";
-        std::cout << "2. Hunt and Kill Algorithm\n";
-        std::cout << "3. Prim's Algorithm\n";
-        std::cout << "4. Origin Shift Algorithm\n";
-        std::cout << "5. Back to Algorithms Menu\n";
-        std::cout << "==============================================\n";
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+        cout << "\n========= Maze Generation Algorithms =========\n";
+        cout << "1. DFS Maze Algorithm\n";
+        cout << "2. Hunt and Kill Algorithm\n";
+        cout << "3. Prim's Algorithm\n";
+        cout << "4. Origin Shift Algorithm\n";
+        cout << "5. Back to Menu\n";
+        cout << "==============================================\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
         switch (choice)
         {
         case 1:
-            std::cout << "Launching DFS Maze Algorithm...\n";
+            cout << "Launching DFS Maze Algorithm...\n";
             dfs_maze_animation();
             break;
         case 2:
-            std::cout << "Launching Hunt and Kill Maze Algorithm...\n";
+            cout << "Launching Hunt and Kill Maze Algorithm...\n";
             hunt_and_kill_maze_animation();
             break;
         case 3:
-            std::cout << "Launching Prim's Maze Algorithm...\n";
+            cout << "Launching Prim's Maze Algorithm...\n";
             prim_maze_animation();
             break;
         case 4:
-            std::cout << "Launching Origin Shift Algorithm...\n";
+            cout << "Launching Origin Shift Algorithm...\n";
             origin_shift_animation();
             break;
         case 5:
-            std::cout << "Returning to Algorithms Menu...\n";
+            cout << "Returning to Algorithms Menu...\n";
             return;
         default:
-            std::cout << "Invalid choice. Please try again.\n";
+            cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 5);
 }

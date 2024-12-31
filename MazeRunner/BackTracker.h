@@ -2,6 +2,7 @@
 #include<stack>
 #include <ctime>
 #include<iostream>
+
 using namespace std;
 
 stack <pair <int, int >> CellStack;
@@ -36,8 +37,11 @@ int GetNeighbour(int X, int Y)
 	X - 2 >= 0 && !cell[X - 2][Y].visited ? north = 3 : north = 10;
 	X + 2 < nCells && !cell[X + 2][Y].visited ? south = 4 : south = 10;
 	if (east == 10 && west == 10 && north == 10 && south == 10)
+	{
 		return 0;
-	while (1) {
+	}
+	while (1) 
+	{
 		dice = (rand() % 4) + 1;
 		if (dice == east)
 			return 1;
@@ -139,27 +143,35 @@ void IniSolution()
 bool recursiveSolve(int x, int y)
 {
 	if (x == endX && y == endY)
+	{
 		return true;
+	}
 	if (maze[x][y] == 2 || wasHere[x][y])
+	{
 		return false;
+	}
 	wasHere[x][y] = true;
 	if (x != 0)
-		if (recursiveSolve(x - 1, y)) {
+		if (recursiveSolve(x - 1, y)) 
+		{
 			correctPath[x][y] = true;
 			return true;
 		}
 	if (x != nCells - 1)
-		if (recursiveSolve(x + 1, y)) {
+		if (recursiveSolve(x + 1, y)) 
+		{
 			correctPath[x][y] = true;
 			return true;
 		}
 	if (y != 0)
-		if (recursiveSolve(x, y - 1)) {
+		if (recursiveSolve(x, y - 1)) 
+		{
 			correctPath[x][y] = true;
 			return true;
 		}
 	if (y != mCells - 1)
-		if (recursiveSolve(x, y + 1)) {
+		if (recursiveSolve(x, y + 1)) 
+		{
 			correctPath[x][y] = true;
 			return true;
 		}

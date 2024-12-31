@@ -7,6 +7,7 @@
 #include <stack>
 #include <queue>
 #include <map>
+
 using namespace std;
 
 void dfs_maze();
@@ -17,4 +18,5 @@ void prim_maze();
 void prim_maze_animation();
 void origin_shift();
 void origin_shift_animation();
+
 #endif

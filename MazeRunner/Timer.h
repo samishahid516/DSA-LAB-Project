@@ -14,11 +14,13 @@ int totalTime = 120;
 int minutes, seconds;
 int timerFlag = 1;
 
-void sringconvert(int minute, int second) {
+void sringconvert(int minute, int second) 
+{
     snprintf(str, sizeof(str), "%02d : %02d", minute, second);
 }
 
-void loadTimer() {
+void loadTimer() 
+{
     if (!timefont.loadFromFile("fonts/font.ttf")) {
         printf("Failed to load font.\n");
         exit(1);
@@ -29,25 +31,31 @@ void loadTimer() {
     timestr.setFillColor(sf::Color::White);
 }
 
-void pauseTimer() {
+void pauseTimer() 
+{
     timerState = 0;
     timerFlag = 1;
 }
 
-void startTimer() {
+void startTimer() 
+{
     clk.restart();
-    if (timerFlag) {
+    if (timerFlag) 
+    {
         previousTime = 0;
-        totalTime = 300; // Set timer to 5 minutes
+        totalTime = 120;
         timerFlag = 0;
     }
     timerState = 1;
 }
 
-void showTimer() {
-    if (timerState == 1) {
+void showTimer() 
+{
+    if (timerState == 1) 
+    {
         timee = clk.getElapsedTime().asSeconds();
-        if (previousTime + 1 == timee && totalTime > -1) {
+        if (previousTime + 1 == timee && totalTime > -1) 
+        {
             minutes = totalTime / 60;
             seconds = totalTime % 60;
             sringconvert(minutes, seconds);

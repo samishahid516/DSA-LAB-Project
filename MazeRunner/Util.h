@@ -13,7 +13,8 @@ int get_random_number(int max);
 struct node
 {
     int prev_x, prev_y, current_x, current_y;
-    node& operator =(const node& a) {
+    node& operator =(const node& a) 
+    {
         prev_x = a.prev_x;
         prev_y = a.prev_y;
         current_x = a.current_x;

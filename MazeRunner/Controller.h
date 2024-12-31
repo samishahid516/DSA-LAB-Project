@@ -55,7 +55,8 @@ void startGame()
 		SideMenu();
 		myWindow.draw(solvedButton);
 		sf::Vector2i mousePos = sf::Mouse::getPosition(myWindow);
-		if (scoreflag) {
+		if (scoreflag) 
+		{
 			totalScore += score;
 			scoreflag = 0;
 		}

@@ -2,6 +2,8 @@
 #define CONSTANTS_H
 #include <SFML/Graphics.hpp>
 
+using namespace std;
+
 const int WIDTH = 2000, HEIGHT = 1200;
 const int GRID_HEIGHT = 40, GRID_WIDTH = 40;
 const int SQUARE_SIZE = 20;
